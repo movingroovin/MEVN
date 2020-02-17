@@ -1,9 +1,16 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <div>
+      <h4>Say something</h4>
+      <input type="text" v-model="text">
+      <button @click="createPost">Submit</button>
+    </div>
+    <hr>
     <div v-for="(post, index) in posts" :key="index">
       <h3>{{post.text}}</h3>
       <p>{{post.createTime}}</p>
+      <button @click="deletePost(post._id)">Delete</button>
     </div>
   </div>
 </template>
@@ -30,6 +37,16 @@ export default {
       })
     } catch (err) {
       this.error = err.message
+    }
+  },
+  methods: {
+    async createPost() {
+      await PostController.insertPost(this.text)
+      this.posts = await PostController.getPosts()
+    },
+    async deletePost(id) {
+      await PostController.deletePost(id)
+      this.posts = await PostController.getPosts()
     }
   }
 }
