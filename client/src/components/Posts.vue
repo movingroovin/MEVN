@@ -1,30 +1,37 @@
 <template>
-<div >
-  <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="../assets/pics/carousel1.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="../assets/pics/carousel2.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="../assets/pics/carousel3.jpg" class="d-block w-100" alt="...">
+<div>
+  <nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">Oceanice</a>
+  </nav>
+  <div class="row">
+    <div class="col-md-12">
+      <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="../assets/pics/carousel1.jpg" class="d-block img-fluid" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="../assets/pics/carousel2.jpg" class="d-block img-fluid" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="../assets/pics/carousel3.jpg" class="d-block img-fluid" alt="...">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
   </div>
   <div class="hello">
     <h1>{{ msg }}</h1>
@@ -96,13 +103,7 @@ li {
 a {
   color: #42b983;
 }
-.carousel-item{
-    height: 800px;
-} 
-.carousel-item img{
-    position: absolute;
-    top: 0;
-    left: 0;
-    min-height: 500px;
-}
+.carousel { height: 100%; }
+.carousel-inner, .carousel-item { height: 100%; }
+.carousel-item { background-size: cover; background-position: center; }
 </style>
