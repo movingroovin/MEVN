@@ -17,17 +17,39 @@
             <div class="carousel-caption">
               <h1>
                 <span class="d-none d-sm-block">極凍，大海的饗宴</span>
-                <span class="d-block d-sm-none">凍洋</span>
               </h1>
+              <h3>
+                <span class="d-block d-sm-none">極凍，大海的饗宴</span>
+              </h3>
               <p class="d-none d-lg-block">凍洋致力於將海中最極致的鮮美原封不動地呈現在您的餐桌上。漁產從離開海面起，便進入極低溫環境運作。從加工，封裝，到運送。完整地將大海的鮮美冰封保存，直到您的餐桌前重現。</p>
-              <p class="d-none d-lg-block">不僅急凍，更是極凍。</p>
+              <p class="d-none d-sm-block">不僅急凍，更是極凍。</p>
             </div>
           </div>
           <div class="carousel-item">
             <img src="../assets/pics/carousel2.jpg" class="d-block img-fluid" alt="...">
+            <div class="carousel-caption">
+              <h1>
+                <span class="d-none d-sm-block">極凍，大海的饗宴</span>
+              </h1>
+              <h3>
+                <span class="d-block d-sm-none">極凍，大海的饗宴</span>
+              </h3>
+              <p class="d-none d-lg-block">凍洋致力於將海中最極致的鮮美原封不動地呈現在您的餐桌上。漁產從離開海面起，便進入極低溫環境運作。從加工，封裝，到運送。完整地將大海的鮮美冰封保存，直到您的餐桌前重現。</p>
+              <p class="d-none d-sm-block">不僅急凍，更是極凍。</p>
+            </div>
           </div>
           <div class="carousel-item">
             <img src="../assets/pics/carousel3.jpg" class="d-block img-fluid" alt="...">
+            <div class="carousel-caption">
+              <h1>
+                <span class="d-none d-sm-block">極凍，大海的饗宴</span>
+              </h1>
+              <h3>
+                <span class="d-block d-sm-none">極凍，大海的饗宴</span>
+              </h3>
+              <p class="d-none d-lg-block">凍洋致力於將海中最極致的鮮美原封不動地呈現在您的餐桌上。漁產從離開海面起，便進入極低溫環境運作。從加工，封裝，到運送。完整地將大海的鮮美冰封保存，直到您的餐桌前重現。</p>
+              <p class="d-none d-sm-block">不僅急凍，更是極凍。</p>
+            </div>
           </div>
         </div>
         <a class="carousel-control-prev d-none d-sm-flex" href="#carouselIndicators" role="button" data-slide="prev">
@@ -97,9 +119,6 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
 ul {
   list-style-type: none;
   padding: 0;
@@ -112,7 +131,7 @@ a {
   color: #42b983;
 }
 .carousel {
-  height: 70%;
+  height: 80%;
 }
 .carousel-inner {
   height: 100%;
