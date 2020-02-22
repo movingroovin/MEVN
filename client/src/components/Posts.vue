@@ -103,7 +103,15 @@ li {
 a {
   color: #42b983;
 }
-.carousel { height: 100%; }
-.carousel-inner, .carousel-item { height: 100%; }
-.carousel-item { background-size: cover; background-position: center; }
+.carousel {
+  height: 75%;
+}
+.carousel-inner {
+  height: 100%;
+}
+.carousel-item {
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
 </style>
