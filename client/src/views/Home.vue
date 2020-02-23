@@ -1,10 +1,33 @@
 <template>
 <div>
-  <!--<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="#">Oceanice</a>
-  </nav>-->
+  <nav class="navbar navbar-expand-lg navbar-light navbar-transparent">
+    <a class="navbar-brand" href="#">凍洋</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">關於凍洋<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">最新消息</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">商品選購</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">常見問題</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">聯絡我們</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-lg-12">
       <div id="carouselIndicators" class="carousel slide " data-ride="carousel">
         <ol class="carousel-indicators">
           <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
@@ -127,10 +150,16 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
-  color: #42b983;
+.navbar {
+  position: absolute;
+  z-index: 10;
+  width:100%;
+}
+.navbar-brand {
+  color: aliceblue;
 }
 .carousel {
+  top: 0;
   height: 80%;
 }
 .carousel-inner {
@@ -140,6 +169,9 @@ a {
   height: 100%;
   background-size: cover;
   background-position: center;
+}
+.carousel-item img {
+  width: 100%;
 }
 .carousel-caption {
   height: 57%;
