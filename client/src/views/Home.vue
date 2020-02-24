@@ -1,10 +1,9 @@
 <template>
 <div>
-  <nav class="navbar navbar-expand-lg navbar-light navbar-transparent">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">凍洋</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon">
-      <i class="fas fa-bars" style="color:#fff; font-size:28px;"></i></span>
+      <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
@@ -150,17 +149,6 @@ ul {
 li {
   display: inline-block;
   margin: 0 10px;
-}
-.navbar {
-  position: absolute;
-  z-index: 10;
-  width:100%;
-}
-.navbar-brand {
-  color: aliceblue;
-}
-.navbar-nav .nav-item .nav-link {
-  color: azure;
 }
 .carousel {
   top: 0;
