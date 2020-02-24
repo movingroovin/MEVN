@@ -1,7 +1,8 @@
 <template>
 <div>
+<div>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">凍洋</a>
+    <a class="navbar-brand" href="/">凍洋</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,23 +10,24 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">關於凍洋<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/About">關於凍洋<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">最新消息</a>
+          <a class="nav-link" href="/News">最新消息</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">商品選購</a>
+          <a class="nav-link" href="/Product">商品選購</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">常見問題</a>
+          <a class="nav-link" href="/FAQ">常見問題</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">聯絡我們</a>
+          <a class="nav-link" href="/Contact">聯絡我們</a>
         </li>
       </ul>
     </div>
   </nav>
+  </div>
   <div class="row">
     <div class="col-lg-12">
       <div id="carouselIndicators" class="carousel slide " data-ride="carousel">
@@ -86,58 +88,11 @@
       </div>
     </div>
   </div>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <div>
-      <h4>Say something</h4>
-      <input type="text" v-model="text">
-      <button type="button" class="btn btn-outline-primary" @click="createPost">Submit</button>
-    </div>
-    <hr>
-    <div v-for="(post, index) in posts" :key="index">
-      <h3>{{post.text}}</h3>
-      <p>{{post.createTime}}</p>
-      <button @click="deletePost(post._id)">Delete</button>
-    </div>
-  </div>
+  <router-view/>
 </div>
 </template>
 
 <script>
-import PostController from '../PostsController'
-
-export default {
-  name: 'Posts',
-  props: {
-    msg: String
-  },
-  data() {
-    return {
-      posts: [],
-      error: '',
-      text: ''
-    }
-  },
-  created() {
-    try {
-      PostController.getPosts().then(data => {
-        this.posts = data
-      })
-    } catch (err) {
-      this.error = err.message
-    }
-  },
-  methods: {
-    async createPost() {
-      await PostController.insertPost(this.text)
-      this.posts = await PostController.getPosts()
-    },
-    async deletePost(id) {
-      await PostController.deletePost(id)
-      this.posts = await PostController.getPosts()
-    }
-  }
-}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
