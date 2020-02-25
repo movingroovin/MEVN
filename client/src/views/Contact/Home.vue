@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import PostController from '../../PostsController'
+import PostController from '../../assets/ajax/PostsController'
 
 export default {
   name: 'Posts',
