@@ -8,6 +8,14 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
+// Setup mongoose connection
+const mongoose = require('mongoose');
+const mongoDB = 'mongodb://wei:wei820801@ds045632.mlab.com:45632/mevn'
+mongoose.connect(mongoDB)
+mongoose.Promise = global.Promise
+const db = mongoose.connection
+db.on('error', console.error.bind(console, 'MongoDB connection error:'))
+
 const posts = require('./routes/api/posts')
 app.use('/api/posts', posts)
 
