@@ -11,11 +11,15 @@ app.use(cors());
 // Setup mongoose connection
 const mongoose = require('mongoose');
 const mongoDB = 'mongodb://wei:wei820801@ds045632.mlab.com:45632/mevn'
-mongoose.connect(mongoDB)
+mongoose.connect(mongoDB, {
+  useNewUrlParser: true
+})
 mongoose.Promise = global.Promise
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
+db.once('open', () => console.log('Connected to Database'))
 
+// apis
 const posts = require('./routes/api/posts')
 app.use('/api/posts', posts)
 
