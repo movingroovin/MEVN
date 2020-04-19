@@ -13,25 +13,64 @@ router.get('/', async (req, res) => {
   res.send(posts)
 })
 
-// Add Posts
-// router.post('/', async (req, res) => {
-//   const posts = await loadPostsCollections()
-//   await posts.insertOne({
-//     text: req.body.text,
-//     createTime: new Date()
-//   })
-//   res.status(201).send('Add successfully');
-// })
+// Add Post
+router.post('/', async (req, res) => {
+  // const posts = await loadPostsCollections()
+  // await posts.insertOne({
+  //   text: req.body.text,
+  //   createTime: new Date()
+  // })
+  // res.status(201).send('Add successfully');
+  const post = new Post({
+    text: req.body.text,
+    createTime: new Date()
+  })
+  try {
+    const newPost = await post.save()
+    res.status(201).send(newPost)
+  } catch (err) {
+    res.status(400).send({
+      message: err.message
+    })
+  }
+})
 
-// Delete Posts
-// router.delete('/:id', async (req, res) => {
-//   const posts = await loadPostsCollections()
-//   await posts.deleteOne({
-//     _id: new mongodb.ObjectID(req.params.id)
-//   })
-//   res.status(200).send('Deleted');
-// })
+// Delete Post
+router.delete('/:id', getPost, async (req, res) => {
+  try {
+    await res.post.remove()
+    res.status(200).send('Deleted');
+  } catch {
+    res.status(500).send({
+      message: err.message
+    })
+  }
+  // const posts = await loadPostsCollections()
+  // await posts.deleteOne({
+  //   _id: new mongodb.ObjectID(req.params.id)
+  // })
+  // res.status(200).send('Deleted');
+})
 
+async function getPost (req, res, next) {
+  let post
+  try {
+    post = await Post.findById(req.params.id)
+    if (!post) {
+      return res.status(404).send({
+        message: 'caonnot find post'
+      })
+    }
+  } catch {
+    return res.status(500).send({
+      message: err.message
+    })
+  }
+  res.post = post
+  next()
+}
+
+// ==== refactored ====
 // connection to mongodb
 // async function loadPostsCollections () {
 //   const client = await mongodb.MongoClient.connect(

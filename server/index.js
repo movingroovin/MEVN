@@ -21,7 +21,9 @@ db.once('open', () => console.log('Connected to Database'))
 
 // apis
 const posts = require('./routes/api/posts')
+const products = require('./routes/api/products')
 app.use('/api/posts', posts)
+app.use('/api/products', products)
 
 // Handle Production
 if (process.env.NODE_ENV === 'production') {
