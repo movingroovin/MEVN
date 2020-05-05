@@ -1,12 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const passport = require('passport')
 
 const app = express();
 
 // Middleware
 app.use(bodyParser.json());
 app.use(cors());
+app.use(passport.initialize())
+require('./config/passport')(passport)
 
 // Setup mongoose connection
 const mongoose = require('mongoose');
@@ -20,6 +23,11 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 db.once('open', () => console.log('Connected to Database'))
 
 // apis
+// login system
+const users = require('./routes/api/users')
+app.use('/api/users', users)
+
+// other features
 const posts = require('./routes/api/posts')
 const products = require('./routes/api/products')
 app.use('/api/posts', posts)
@@ -30,7 +38,7 @@ if (process.env.NODE_ENV === 'production') {
   // Static folder
   app.use(express.static(__dirname + '/public'))
 
-  // Handle SPA
+  // Handle SPA (direct all routes to SPA index.html)
   app.get(/.*/, (req, res) => {
     res.sendFile(__dirname + '/public/index.html')
   })
